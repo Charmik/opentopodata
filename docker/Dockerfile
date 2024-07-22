@@ -4,7 +4,12 @@ RUN set -e && \
     apt-get update && \
     apt-get install -y --no-install-recommends \
         gcc \
-        python3.11-dev
+        python3.11-dev \
+        gdal-bin \
+        libgdal-dev \
+        g++
+
+ENV GDAL_CONFIG=/usr/bin/gdal-config
 
 RUN pip config set global.disable-pip-version-check true && \
     pip wheel --wheel-dir=/root/wheels uwsgi==2.0.24 && \
@@ -17,7 +22,10 @@ RUN set -e && \
     apt-get install -y --no-install-recommends \
         nginx \
         memcached \
-        supervisor && \
+        supervisor \
+        gdal-bin \
+        libgdal-dev \
+        g++ && \
     rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /root/wheels /root/wheels
@@ -30,7 +38,7 @@ RUN pip install \
         uwsgi regex && \
     pip install --no-cache-dir --disable-pip-version-check -r /app/requirements.txt && \
         rm -rf /root/.cache/pip/* && \
-        rm root/wheels/* && \
+        rm -rf /root/wheels/* && \
         rm /app/requirements.txt
 
 WORKDIR /app
