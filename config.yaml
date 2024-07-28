@@ -1,0 +1,5 @@
+max_locations_per_request: 50000
+access_control_allow_origin: '*'
+datasets:
+- name: aster30m
+  path: data/aster30m/
