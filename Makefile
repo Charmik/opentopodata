@@ -8,7 +8,10 @@ build-m1:
 	docker build --tag opentopodata:$(VERSION) --file docker/apple-silicon.Dockerfile .
 
 run:
-	docker run --rm -it --volume "$(shell pwd)/data:/app/data:ro" -p 5000:5000 opentopodata:$(VERSION) 
+	docker run --rm -it --volume "$(shell pwd)/data:/app/data:ro" -p 5000:5000 opentopodata:$(VERSION)
+
+run-system:
+	docker run --rm --volume "$(shell pwd)/data:/app/data:ro" -p 5000:5000 opentopodata:$(VERSION)
 
 daemon:
 	docker run --rm -itd --volume "$(shell pwd)/data:/app/data:ro" -p 5000:5000 opentopodata:$(VERSION) 
