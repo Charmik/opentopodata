@@ -10,7 +10,7 @@ build-m1:
 run:
 	docker run --rm -it --volume "$(shell pwd)/data:/app/data:ro" -p 5000:5000 opentopodata:$(VERSION)
 
-run-system:
+run-systemd:
 	docker run --rm --volume "$(shell pwd)/data:/app/data:ro" -p 5000:5000 opentopodata:$(VERSION)
 
 daemon:
