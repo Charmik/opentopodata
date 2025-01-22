@@ -1,0 +1,82 @@
+version: "3.9"
+
+services:
+  opentopodata1:
+    image: opentopodata:1.9.0
+    volumes:
+      - ./data:/app/data:ro
+    ports:
+      - "5000:5000"
+    restart: always
+
+  opentopodata2:
+    image: opentopodata:1.9.0
+    volumes:
+      - ./data:/app/data:ro
+    ports:
+      - "5001:5000"
+    restart: always
+
+  opentopodata3:
+    image: opentopodata:1.9.0
+    volumes:
+      - ./data:/app/data:ro
+    ports:
+      - "5002:5000"
+    restart: always
+
+  opentopodata4:
+    image: opentopodata:1.9.0
+    volumes:
+      - ./data:/app/data:ro
+    ports:
+      - "5003:5000"
+    restart: always
+
+  opentopodata5:
+    image: opentopodata:1.9.0
+    volumes:
+      - ./data:/app/data:ro
+    ports:
+      - "5004:5000"
+    restart: always
+
+  opentopodata6:
+    image: opentopodata:1.9.0
+    volumes:
+      - ./data:/app/data:ro
+    ports:
+      - "5005:5000"
+    restart: always
+
+  opentopodata7:
+    image: opentopodata:1.9.0
+    volumes:
+      - ./data:/app/data:ro
+    ports:
+      - "5006:5000"
+    restart: always
+
+  opentopodata8:
+    image: opentopodata:1.9.0
+    volumes:
+      - ./data:/app/data:ro
+    ports:
+      - "5007:5000"
+    restart: always
+
+  opentopodata9:
+    image: opentopodata:1.9.0
+    volumes:
+      - ./data:/app/data:ro
+    ports:
+      - "5008:5000"
+    restart: always
+
+  opentopodata10:
+    image: opentopodata:1.9.0
+    volumes:
+      - ./data:/app/data:ro
+    ports:
+      - "5009:5000"
+    restart: always
